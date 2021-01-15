@@ -1,0 +1,160 @@
+.navbar {
+  background: transparent;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  z-index: 1;
+}
+
+.navbar-logo {
+  background-clip: text;
+  background-image: linear-gradient(
+    to bottom left,
+    #00f100,
+    #50e3f5,
+    #b67afe,
+    #ff0084
+  );
+  background-size: 300% 100%;
+  animation: Anim 5s ease infinite;
+  -webkit-text-fill-color: transparent;
+  justify-self: start;
+  display: flex;
+  cursor: pointer;
+  font-weight: bold;
+  padding-left: 10px;
+  opacity: 99%;
+  text-decoration: none;
+  font-size: 2.5rem;
+}
+@keyframes Anim {
+  0% {
+    background-position: 0 0;
+  }
+
+  50% {
+    background-position: 99% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+.navbar-logo > .MuiSvgIcon-root {
+  margin-left: 10px;
+  color: #50e3f5;
+  place-self: center;
+}
+
+.fa-firstdraft {
+  color: #6f00ff;
+  margin-left: 0.5rem;
+  font-size: 1.6rem;
+}
+
+.nav-menu {
+  display: grid;
+  grid-template-columns: repeat(5, auto);
+  grid-gap: 10px;
+  list-style: none;
+  text-align: center;
+  width: 70vw;
+  justify-content: end;
+  margin-right: 2rem;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  height: 50px;
+}
+
+.nav-links {
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  background-color: white;
+  color: #000000;
+  font-size: 1.7rem;
+  font-weight: 700;
+  padding: 0.5rem 1rem;
+}
+
+.nav-links:hover {
+  background-color: #cc00ff;
+  color: rgb(255, 255, 255);
+  border-radius: 4px;
+  transition: all 0.2s ease-out;
+}
+
+.navbar > .MuiSvgIcon-root {
+  display: none;
+}
+
+@media screen and (max-width: 960px) {
+  .NavbarItems {
+    position: relative;
+  }
+  .navbar > .MuiSvgIcon-root {
+    color: rgb(140, 0, 255);
+    z-index: 1;
+    display: block;
+  }
+
+  .nav-menu {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    position: absolute;
+    top: 0px;
+    left: -100%;
+    opacity: 1;
+    transition: all 2s cubic-bezier(0.19, 1, 0.22, 1);
+  }
+
+  .nav-menu.active {
+    background: #000000;
+    left: 0;
+    opacity: 1;
+    transition: all 0.5s ease;
+    z-index: 1;
+    transition: all 2s cubic-bezier(0.19, 1, 0.22, 1);
+  }
+
+  .nav-links {
+    text-align: center;
+    padding: 2rem;
+    margin-top: 300%;
+    width: 100%;
+    color: white;
+    background: none;
+    display: table;
+  }
+
+  .nav-links:hover {
+    background-color: #1888ff;
+    border-radius: 0;
+  }
+
+  .navbar-logo {
+    position: absolute;
+    font-size: 1.6rem;
+    padding-left: 0px;
+    top: 0;
+    left: 0;
+    font-size: 2rem;
+    transform: translate(25%, 50%);
+  }
+
+  .menu-icon {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(-100%, 60%);
+    font-size: 1.8rem;
+    cursor: pointer;
+  }
+}
